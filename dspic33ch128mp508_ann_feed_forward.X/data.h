@@ -5,14 +5,15 @@
 #include "neuron_types.h"
 
 extern double input[TOTAL_INPUTS];
-extern double trainingInputSet[EPOCH_SIZE][TOTAL_INPUTS];
-extern double trainingOutputSet[EPOCH_SIZE][TOTAL_OUTPUT_NEURONS];
 
 extern hidden_neuron_t hiddenNeuron[TOTAL_HIDDEN_NEURONS];
 extern output_neuron_t outputNeuron[TOTAL_OUTPUT_NEURONS];
 
 //storage if learning is enabled
 #if ENABLE_LEARNING == 1
+extern double trainingInputSet[EPOCH_SIZE][TOTAL_INPUTS];
+extern double trainingOutputSet[EPOCH_SIZE][TOTAL_OUTPUT_NEURONS];
+
 extern double expectedOutput[TOTAL_OUTPUT_NEURONS];
 extern double error[TOTAL_OUTPUT_NEURONS];
 extern double epochOutput[EPOCH_SIZE][TOTAL_OUTPUT_NEURONS];
