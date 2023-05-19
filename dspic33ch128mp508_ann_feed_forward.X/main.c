@@ -7,7 +7,7 @@
 
 #include "feed_forward.h"
 #include "data.h"
-#include "learningProcess.h"
+#include "learning_process.h"
 #include <stdint.h>
 #include "mcc_generated_files/system/system.h"
 #include "mcc_generated_files/uart/uart1.h"
@@ -63,7 +63,7 @@ int main(void) {
     printf("Before training: Provide inputs\r\n");
     input[0] = (Serial.Read() == 48)?0:1;
     input[1] = (Serial.Read() == 48)?0:1;
-    feed_forward();
+    Feed_Forward_Start();
     printf("%f\r\n",outputNeuron[0].activatedOutput);
     
     
@@ -71,24 +71,20 @@ int main(void) {
     {
         while(currentLearningState != EPOCH_COMPLETE)
         {
-            LearningProcess();
+            Learning_Process_Start();
         }
 
-        currentLearningState = START_EPOCH; 
+        currentLearningState = EPOCH_START; 
     }
-    
-    
     
     while(1)
     {
         printf("After Training: Provide inputs\r\n");
         input[0] = (Serial.Read() == 48)?0:1;
         input[1] = (Serial.Read() == 48)?0:1;
-        feed_forward();
+        Feed_Forward_Start();
         printf("%f\r\n",outputNeuron[0].activatedOutput);
     }
-    
-    //Implement stop condition
     
     return 0;
 }

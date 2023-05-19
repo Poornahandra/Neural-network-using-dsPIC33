@@ -6,12 +6,11 @@
  */
 
 #include "data.h"
-#include "helper.h"
 #include "neuron_types.h"
 #include "activation_function.h"
 #include <stdint.h>
 
-void feed_forward(void) 
+void Feed_Forward_Start(void) 
 {
     double hiddenOutputs[TOTAL_HIDDEN_NEURONS];
     uint16_t i;

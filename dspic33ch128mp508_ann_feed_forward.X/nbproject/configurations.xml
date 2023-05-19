@@ -31,10 +31,9 @@
       <itemPath>neural_network_config.h</itemPath>
       <itemPath>activation_function.h</itemPath>
       <itemPath>data.h</itemPath>
-      <itemPath>helper.h</itemPath>
       <itemPath>error.h</itemPath>
-      <itemPath>backPropogation.h</itemPath>
-      <itemPath>learningProcess.h</itemPath>
+      <itemPath>back_propagation.h</itemPath>
+      <itemPath>learning_process.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -69,10 +68,9 @@
       <itemPath>feed_forward.c</itemPath>
       <itemPath>activation_function.c</itemPath>
       <itemPath>data.c</itemPath>
-      <itemPath>helper.c</itemPath>
       <itemPath>error.c</itemPath>
-      <itemPath>backPropogation.c</itemPath>
-      <itemPath>learningProcess.c</itemPath>
+      <itemPath>back_propagation.c</itemPath>
+      <itemPath>learning_process.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -90,7 +88,7 @@
         <targetDevice>dsPIC33CH128MP508</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>Simulator</platformTool>
+        <platformTool>ICD4Tool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>2.10</languageToolchainVersion>
         <platform>3</platform>
@@ -320,8 +318,6 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-15eff"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/MCU16/Neural_network/dspic33ch128mp508_ann_feed_forward.X/debug/default/dspic33ch128mp508_ann_feed_forward_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>

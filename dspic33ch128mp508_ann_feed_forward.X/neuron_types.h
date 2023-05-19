@@ -4,19 +4,13 @@
 
 #include "neural_network_config.h"
 
-enum LAYER 
-{
-    HIDDEN_LAYER1,
-    OUTPUT_LAYER
-};
-
 //Hidden layer
 typedef struct {
     double weight[TOTAL_INPUTS];
     double bias;
     double output;
     double activatedOutput;
-#ifdef ENABLE_LEARNING
+#if ENABLE_LEARNING == 1
     double doe;
     double deltaWeight[TOTAL_INPUTS];
     double deltaBias;
@@ -29,7 +23,7 @@ typedef struct {
     double bias;
     double output;
     double activatedOutput;
-#ifdef ENABLE_LEARNING
+#if ENABLE_LEARNING == 1
     double doe;
     double deltaWeight[TOTAL_HIDDEN_NEURONS];
     double deltaBias;

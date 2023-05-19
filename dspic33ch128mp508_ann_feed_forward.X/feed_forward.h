@@ -2,6 +2,7 @@
 #ifndef FEED_FORWARD_H
 #define	FEED_FORWARD_H
 
-void feed_forward(void);
+void Feed_Forward_Start(void);
+
 #endif	/* FEED_FORWARD_H */
 

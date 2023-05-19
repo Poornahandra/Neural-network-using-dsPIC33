@@ -10,17 +10,18 @@
 #include <stdint.h>
 #include <xc.h>
 
-void backPropogation(void) 
+#if ENABLE_LEARNING == 1
+
+void Back_Propagation_Start(void) 
 {
     uint16_t i,j;
-    
     //Calculate weight adjustments
     for(i=0;i<TOTAL_OUTPUT_NEURONS;i++)
     {
-        outputNeuron[i].doe = EXP_CONSTANT*(expectedOutput[i]-outputNeuron[i].activatedOutput)*(outputNeuron[i].activatedOutput)*(1-outputNeuron[i].activatedOutput);
+        outputNeuron[i].doe = SIGMOID_EXP_CONSTANT*(error[i])*(outputNeuron[i].activatedOutput)*(1-outputNeuron[i].activatedOutput);
         for(j=0;j<TOTAL_HIDDEN_NEURONS;j++)
         {
-            hiddenNeuron[j].doe = EXP_CONSTANT*(outputNeuron[i].weight[j])*(outputNeuron[i].doe)*(hiddenNeuron[j].activatedOutput)*(1-hiddenNeuron[j].activatedOutput);
+            hiddenNeuron[j].doe = SIGMOID_EXP_CONSTANT*(outputNeuron[i].weight[j])*(outputNeuron[i].doe)*(hiddenNeuron[j].activatedOutput)*(1-hiddenNeuron[j].activatedOutput);
             outputNeuron[i].deltaWeight[j] = LEARNING_RATE*(outputNeuron[i].doe)*(hiddenNeuron[j].activatedOutput);
             outputNeuron[i].weight[j] = outputNeuron[i].weight[j] + outputNeuron[i].deltaWeight[j];
         }
@@ -45,3 +46,4 @@ void backPropogation(void)
     }
     return;
 }
+#endif
