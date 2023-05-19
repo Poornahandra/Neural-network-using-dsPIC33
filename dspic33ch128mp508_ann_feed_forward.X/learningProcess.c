@@ -48,7 +48,7 @@ void LearningProcess(void)
             break;
         case BACK_PROPOGATION:
                 backPropogation();
-                currentLearningState = FEED_FORWARD;
+                currentLearningState = UPDATE_TRAINING_SET;
             break;
         case EPOCH_COMPLETE:
             
