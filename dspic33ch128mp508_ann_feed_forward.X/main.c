@@ -54,15 +54,15 @@ void setInitialWeights(void)
 }
 
 int main(void) {
-    uint16_t epochRepeat = 2000,i;
+    uint16_t epochRepeat = 5000,i;
     SYSTEM_Initialize();
     setBias();
     setInitialWeights();
     setTrainingSet();
     
     printf("Before training: Provide inputs\r\n");
-    input[0] = Serial.Read();
-    input[1] = Serial.Read();
+    input[0] = (Serial.Read() == 48)?0:1;
+    input[1] = (Serial.Read() == 48)?0:1;
     feed_forward();
     printf("%f\r\n",outputNeuron[0].activatedOutput);
     
@@ -82,8 +82,8 @@ int main(void) {
     while(1)
     {
         printf("After Training: Provide inputs\r\n");
-        input[0] = (double)Serial.Read();
-        input[1] = (double)Serial.Read();
+        input[0] = (Serial.Read() == 48)?0:1;
+        input[1] = (Serial.Read() == 48)?0:1;
         feed_forward();
         printf("%f\r\n",outputNeuron[0].activatedOutput);
     }

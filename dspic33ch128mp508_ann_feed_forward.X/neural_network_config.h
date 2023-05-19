@@ -23,7 +23,7 @@
 
 //Learning parameters
 #define ENABLE_LEARNING
-#define LEARNING_RATE 0.1
+#define LEARNING_RATE 1
 #define EPOCH_SIZE 4
 #define ENABLE_BIAS_ADJUST 1
 
