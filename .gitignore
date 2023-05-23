@@ -1,0 +1,9 @@
+build/
+dist/
+private/
+.generated_files/
+*.bash
+**/*.properties
+**/*-*.properties
+**/*.mk
+**/*-*.mk
